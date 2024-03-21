@@ -35,7 +35,7 @@ export default function SignupFormDemo() {
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
         const entry: Entry = { username, codeLanguage, stdin, sourceCode, timestamp: new Date().toLocaleString() };
-    
+        console.log(entry,"entry")
         axios.post('http://localhost:3000/submit', entry)
           .then(() => {
             setUsername('');
@@ -48,8 +48,8 @@ export default function SignupFormDemo() {
       };
       
   return (
-    <div className="antialiased text-slate-500 dark:text-slate-400 bg-white dark:bg-gradient-to-r from-slate-900 to-sky-800 pt-16 pb-12">
-      <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl  p-4 md:p-8 shadow-input bg-white dark:bg-black">
+    <div className="antialiased text-slate-500 dark:text-slate-400 bg-white dark:bg-gradient-to-r from-slate-900 to-sky-800 h-screen">
+      <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl  p-4 md:p-8 pt-12 shadow-input bg-white dark:bg-black">
         <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
           Welcome to Striver's SDE Inter Hiring Task
         </h2>
@@ -118,7 +118,7 @@ export default function SignupFormDemo() {
           type="submit"
           
         >
-          Sign up &rarr;
+          Submit &rarr;
           <BottomGradient />
         </button>
         </form>
